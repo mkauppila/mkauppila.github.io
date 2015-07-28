@@ -10,5 +10,8 @@ github_username:  mkauppila
 
 paginate: 2
 
+sass:
+    sass_dir: _sass # make sure @import works
+
 # Build settings
 markdown: kramdown
