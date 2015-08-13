@@ -8,7 +8,9 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+h1 {
+    font-size: 1.7em;
+}
 
 /**
  * Basic styling
@@ -89,9 +91,10 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    color: $text-color;
     text-decoration: none;
 
+    /*
     &:visited {
         color: darken($brand-color, 15%);
     }
@@ -100,6 +103,7 @@ a {
         color: $text-color;
         text-decoration: underline;
     }
+    */
 }
 
 

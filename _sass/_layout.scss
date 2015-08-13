@@ -11,15 +11,19 @@
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 2em;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
+    color: $text-color;
 
+
+/*
     &,
     &:visited {
         color: $grey-color-dark;
     }
+*/
 }
 
 .site-nav {
@@ -125,14 +129,16 @@
 }
 
 .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(65% - (#{$spacing-unit} / 2));
+    width:         calc(65% - (#{$spacing-unit} / 2));
 }
 
+/*
 .footer-col-3 {
     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
     width:         calc(45% - (#{$spacing-unit} / 2));
 }
+*/
 
 @include media-query($on-laptop) {
     .footer-col-1,
@@ -187,6 +193,14 @@
     font-size: 24px;
 }
 
+.post-readmore {
+    margin-bottom: 24px;
+
+    a {
+        color: $brand-color;
+    }
+}
+
 
 
 /**
@@ -232,4 +246,12 @@
             font-size: 18px;
         }
     }
+}
+
+/**
+ * Pagination
+ */
+.pagination-wrapper {
+    position: relative;
+    width: 100%;
 }
