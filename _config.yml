@@ -8,7 +8,7 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: markuskauppila
 github_username:  mkauppila
 
-paginate: 2
+paginate: 10
 
 sass:
     sass_dir: _sass # make sure @import works
