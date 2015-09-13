@@ -14,23 +14,24 @@ When working with 3rd party APIs the keys in JSON responses aren’t always perf
 Fortunately, you can do this using `MTLJSONAdapter` using its class method `modelOfClass:fromJSONDictionary:error`. It will create a model for the class and uses `JSONKeyPathsByPropertyKey` while mapping values from JSON to your model’s properties. I found this really awesome because it allows doing custom mapping from JSON to model’s properties and also circumvents the property name invalidness problem! I’m also a bit flabbergasted that I had to find out about this by scratching my head and reading Mantle’s sources.
 
 For instance, if backend serves you JSON like this:
-```
+{% highlight objc %}
 {
     "character name": "Danno",
     "id": 1234567890
 }
-```
+{% endhighlight %}
 and you'd like store it to a model such as
-```
+{% highlight objc %}
 @interface HFOActor : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, readonly) NSUInteger identifier;
 
 @end
-```
+{% endhighlight %}
 In this situation, the one to one mapping is clearly going to fail. So you need to do property mapping to achieve the desired results. To do that implement `JSONKeyPathsByPropertyKey` from `MTLJSONSerializing`.
-```
+
+{% highlight objc %}
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{
@@ -38,20 +39,20 @@ In this situation, the one to one mapping is clearly going to fail. So you need 
         @"identifier": @"id",
     };
 }
-```
+{% endhighlight %}
 Then instantiating a model using the parsed JSON dictionary can then be done by `modelOfClass:fromJSONDictionary:error`.
-```
-    NSError *error;
-    HFOActor *actor = [MTLJSONAdapter
-                       modelOfClass:[HFOActor class]
-                       fromJSONDictionary:jsonDictionary
-                       error:&error];
-    // handle the error here
-```
+{% highlight objc %}
+NSError *error;
+HFOActor *actor = [MTLJSONAdapter
+                   modelOfClass:[HFOActor class]
+                   fromJSONDictionary:jsonDictionary
+                   error:&error];
+// handle the error here
+{% endhighlight %}
 
 To me it feels rather cumbersome to write all the boilerplate for handling the possible error, do the `[HFOModel class]` along with passing the JSON dictionary when using `MTLJSONAdapter`s `modelOfClass:fromJSONDictionary:error`. To make creating models simple, I add a factory method for the model class. The method will handle all the nasty boilerplate.
 
-```objc
+{% highlight objc %}
 + (HFOActor *)actorFromDictionary:(NSDictionary *)dictionary
 {
     NSError *error = nil;
@@ -69,7 +70,7 @@ To me it feels rather cumbersome to write all the boilerplate for handling the p
 
     return actor;
 }
-```
+{% endhighlight %}
 
 Clean and simple.
 

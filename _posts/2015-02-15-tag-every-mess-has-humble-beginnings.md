@@ -12,11 +12,11 @@ The problem is only multiplied if you need to tag several different view groups.
 
 Let’s consider the same example using an associated objects. We’ll add a property to the class using associated objects called `hasLoadedImage`. With this approach, it’s trivial to write clean and simple code to collect all the image views matching the criteria:
 
-```objc
+{% highlight objc %}
 NSArray *viewsWithImage = [imageViews mk_filter:^(UIView *view) {
         return view.hasLoadedImage;
 }];
-```
+{% endhighlight %}
 
 The associated object based approach also scales better, in case you need to filter the views using several conditional statements. Also it makes the intent of the code more easily understanable.
 
