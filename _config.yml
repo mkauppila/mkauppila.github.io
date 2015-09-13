@@ -1,8 +1,6 @@
 # Site settings
 title: Markus Kauppila
 email: markus.kauppila@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  About software craftmanship and creating software for iOS.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: markuskauppila
