@@ -23,6 +23,3 @@ The associated object based approach also scales better, in case you need to fil
 In the past, I’ve ended up using `tag` once in awhile and I’ve regretted it later. I’ve never really found a way to use them properly. Subclassing, composing a new view class or adding properties to existing views using associated objects have better semantic structure and makes the code cleaner. In my opinion, the latter two are good choices depending on the context. Subclassing is also good choice but it has its own problems.
 
 I believe that using the `tag` is an anti-pattern. It doesn’t offer proper semantics that would be easily understandable by code’s reader and using and handling a group of similar views with tagging is just cumbersome and error-prone mess.
-
-> Follow me on twitter: [@MarkusKauppila](http://twitter.com/markuskauppila)
-> or in [Github](https://github.com/mkauppila/)

@@ -75,6 +75,3 @@ To me it feels rather cumbersome to write all the boilerplate for handling the p
 Clean and simple.
 
 While writing this I noticed that Github’s [Octokit.objc](https://github.com/octokit/octokit.objc) project has many _real world_ examples of using Mantle. I cloned and starred that repository as a reference. It’s also a great reference to using ReactiveCocoa.
-
-> Follow me on twitter: [@MarkusKauppila](http://twitter.com/markuskauppila)
-> or in [Github](https://github.com/mkauppila/)
